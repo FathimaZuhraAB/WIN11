@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 1. ZEN MODE TRANSITIONS */
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+  
+  .animate-pulse-fast {
+    animation: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+/* 2. CUSTOM ANIMATIONS */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 3. FEEDBACK COLORS (For Quiz Buttons) */
+.btn-correct {
+  @apply bg-green-100 border-green-500 text-green-800 scale-105;
+}
+
+.btn-wrong {
+  @apply bg-red-100 border-red-500 text-red-800 opacity-80;
+}
+
+/* 4. SCROLLBAR HIDING (For clean Dashboard) */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
